@@ -1,3 +1,5 @@
+require 'controller'
+
 class View
 
 	def create_gossip
@@ -12,9 +14,9 @@ class View
 		return params = { author_live => content_live }
 	end
 
-	def index_gossips(all_gossips)
-		all_gossips.each do
-			puts all_gossips
+	def index_gossips(gossips)
+		gossips.each do |gossip|
+			puts gossip
 		end
 	end
 

@@ -1,5 +1,3 @@
-require 'controller'
-
 class Gossip
 	attr_accessor :params
 
@@ -16,12 +14,11 @@ class Gossip
   end
 
   def self.all
-  	all_gossips = [] # création d'une array vide qui s'appelle all_gossips
-  	CSV.open("./db/gossip.csv", "r") do |line| # chaque ligne de ton CSV.each do |ligne|
-    	temp_gossip = Gossip.new(line) # gossip_provisoire = Gossip.new(paramètres de la ligne) - permet de créer un objet gossip
-    	all_gossips << temp_gossip # all_gossips << gossip_provisoire - permet de rajouter cet objet au array
+  	@@all_gossips = [] # création d'une array vide qui s'appelle all_gossips
+  	CSV.open("./db/gossip.csv", "r").each do |line| # chaque ligne de ton CSV.each do |ligne|
+  		@@all_gossips << line
   	end # end
- 		return all_gossips # return all_gossips - on renvoie le résultat
+ 		return @@all_gossips # return all_gossips - on renvoie le résultat
  	end
 
 end

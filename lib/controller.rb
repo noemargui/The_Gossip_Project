@@ -14,9 +14,8 @@ class Controller
 	end
 
 	def index_gossips
-		all_gossips = @gossip.self.all
-		gossip = View.new(all_gossips)
-		gossip.save
+		@@all_gossips = Gossip.all
+    @view.index_gossips(@@all_gossips)
 	end
 
 end
