@@ -1,4 +1,5 @@
 require 'controller'
+require 'colorize'
 
 class Router
 
@@ -8,19 +9,19 @@ class Router
 
   def perform #rappelle-toi que l'on fait "Router.new.perform" dans app.rb => après initialize, on définit perform.
     puts ""
-    puts "==============================================="
-    puts "************* THE GOSSIP PROJECT **************"
-    puts "==============================================="
+    puts "===============================================".colorize(:blue)
+    puts "************* THE GOSSIP PROJECT **************".colorize(:red)
+    puts "===============================================".colorize(:blue)
     while true
 
       #on affiche le menu
       puts ""
-      puts "Tu veux faire quoi poulet?"
-      puts "1 - Je veux créer un gossip"
-      puts "2 - Je veux afficher tous les po-potins"
-      puts "3 - Je veux quitter l'app immédiatement"
+      puts "Tu veux faire quoi poulet?".colorize(:red)
+      puts "1 - Je veux créer un gossip".colorize(:blue)
+      puts "2 - Je veux afficher tous les po-potins".colorize(:blue)
+      puts "3 - Je veux quitter l'app immédiatement".colorize(:blue)
       puts ""
-      print " Mon choix > "
+      print " Mon choix > ".colorize(:yellow)
       params = gets.chomp.to_i #on attend le choix de l'utilisateur
 
       case params #en fonction du choix
